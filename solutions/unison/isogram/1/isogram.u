@@ -1,0 +1,7 @@
+isogram.isIsogram : Text -> Boolean
+isogram.isIsogram text = 
+  cleanText : [Char]
+  cleanText = text |> toLowercase |> toCharList |> List.filter isLetter
+  distinctChars : [Char]
+  distinctChars = cleanText |> distinct
+  size cleanText == size distinctChars

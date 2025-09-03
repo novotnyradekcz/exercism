@@ -1,0 +1,128 @@
+isogram.test.ex1 = verify do
+  labeled "Empty string" do
+    expected = true
+    actual = isIsogram ""
+    label "expected" expected
+    label "actual" actual
+    ensureEqual expected actual
+
+isogram.test.ex2 = verify do
+  labeled "Isogram with only lower case characters" do
+    expected = true
+    actual = isIsogram "isogram"
+    label "expected" expected
+    label "actual" actual
+    ensureEqual expected actual
+
+isogram.test.ex3 = verify do
+  labeled "Word with one duplicated character" do
+    expected = false
+    actual = isIsogram "eleven"
+    label "expected" expected
+    label "actual" actual
+    ensureEqual expected actual
+
+isogram.test.ex4 = verify do
+  labeled "Word with one duplicated character from the end of the alphabet" do
+    expected = false
+    actual = isIsogram "zzyzx"
+    label "expected" expected
+    label "actual" actual
+    ensureEqual expected actual
+
+isogram.test.ex5 = verify do
+  labeled "Longest reported english isogram" do
+    expected = true
+    actual = isIsogram "subdermatoglyphic"
+    label "expected" expected
+    label "actual" actual
+    ensureEqual expected actual
+
+isogram.test.ex6 = verify do
+  labeled "Word with duplicated character in mixed case" do
+    expected = false
+    actual = isIsogram "Alphabet"
+    label "expected" expected
+    label "actual" actual
+    ensureEqual expected actual
+
+isogram.test.ex7 = verify do
+  labeled "Word with duplicated character in mixed case, lowercase first" do
+    expected = false
+    actual = isIsogram "alphAbet"
+    label "expected" expected
+    label "actual" actual
+    ensureEqual expected actual
+
+isogram.test.ex8 = verify do
+  labeled "Hypothetical isogrammic word with hyphen" do
+    expected = true
+    actual = isIsogram "thumbscrew-japingly"
+    label "expected" expected
+    label "actual" actual
+    ensureEqual expected actual
+
+isogram.test.ex9 = verify do
+  labeled "Hypothetical word with duplicated character following hyphen" do
+    expected = false
+    actual = isIsogram "thumbscrew-jappingly"
+    label "expected" expected
+    label "actual" actual
+    ensureEqual expected actual
+
+isogram.test.ex10 = verify do
+  labeled "Isogram with duplicated hyphen" do
+    expected = true
+    actual = isIsogram "six-year-old"
+    label "expected" expected
+    label "actual" actual
+    ensureEqual expected actual
+
+isogram.test.ex11 = verify do
+  labeled "Made-up name that is an isogram" do
+    expected = true
+    actual = isIsogram "Emily Jung Schwartzkopf"
+    label "expected" expected
+    label "actual" actual
+    ensureEqual expected actual
+
+isogram.test.ex12 = verify do
+  labeled "Duplicated character in the middle" do
+    expected = false
+    actual = isIsogram "accentor"
+    label "expected" expected
+    label "actual" actual
+    ensureEqual expected actual
+
+isogram.test.ex13 = verify do
+  labeled "Same first and last characters" do
+    expected = false
+    actual = isIsogram "angola"
+    label "expected" expected
+    label "actual" actual
+    ensureEqual expected actual
+
+isogram.test.ex14 = verify do
+  labeled "Word with duplicated character and with two hyphens" do
+    expected = false
+    actual = isIsogram "up-to-date"
+    label "expected" expected
+    label "actual" actual
+    ensureEqual expected actual
+
+test> isogram.tests = join [
+  isogram.test.ex1,
+  isogram.test.ex2,
+  isogram.test.ex3,
+  isogram.test.ex4,
+  isogram.test.ex5,
+  isogram.test.ex6,
+  isogram.test.ex7,
+  isogram.test.ex8,
+  isogram.test.ex9,
+  isogram.test.ex10,
+  isogram.test.ex11,
+  isogram.test.ex12,
+  isogram.test.ex13,
+  isogram.test.ex14
+]
