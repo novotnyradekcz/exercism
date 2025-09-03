@@ -1,0 +1,21 @@
+romanNumerals.toRoman : Nat -> Text
+romanNumerals.toRoman decimal = 
+  recursiveRoman : Nat -> Text -> Text
+  recursiveRoman arabic roman =
+    match arabic with
+      x
+        | x >= 1000 -> recursiveRoman (x - 1000) (roman ++ "M")
+        | x >= 900 -> recursiveRoman (x - 900) (roman ++ "CM")
+        | x >= 500 -> recursiveRoman (x - 500) (roman ++ "D")
+        | x >= 400 -> recursiveRoman (x - 400) (roman ++ "CD")
+        | x >= 100 -> recursiveRoman (x - 100) (roman ++ "C")
+        | x >= 90 -> recursiveRoman (x - 90) (roman ++ "XC")
+        | x >= 50 -> recursiveRoman (x - 50) (roman ++ "L")
+        | x >= 40 -> recursiveRoman (x - 40) (roman ++ "XL")
+        | x >= 10 -> recursiveRoman (x - 10) (roman ++ "X")
+        | x >= 9 -> recursiveRoman (x - 9) (roman ++ "IX")
+        | x >= 5 -> recursiveRoman (x - 5) (roman ++ "V")
+        | x >= 4 -> recursiveRoman (x - 4) (roman ++ "IV")
+        | x >= 1 -> recursiveRoman (x - 1) (roman ++ "I")
+      _ -> roman
+  recursiveRoman decimal ""

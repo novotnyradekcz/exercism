@@ -1,0 +1,245 @@
+romanNumerals.test.ex1 = verify do
+  labeled "1 is I" do
+    expected = "I"
+    actual = toRoman 1
+    label "expected" expected
+    label "actual" actual
+    ensureEqual expected actual
+
+romanNumerals.test.ex2 = verify do
+  labeled "2 is II" do
+    expected = "II"
+    actual = toRoman 2
+    label "expected" expected
+    label "actual" actual
+    ensureEqual expected actual
+
+romanNumerals.test.ex3 = verify do
+  labeled "3 is III" do
+    expected = "III"
+    actual = toRoman 3
+    label "expected" expected
+    label "actual" actual
+    ensureEqual expected actual
+
+romanNumerals.test.ex4 = verify do
+  labeled "4 is IV" do
+    expected = "IV"
+    actual = toRoman 4
+    label "expected" expected
+    label "actual" actual
+    ensureEqual expected actual
+
+romanNumerals.test.ex5 = verify do
+  labeled "5 is V" do
+    expected = "V"
+    actual = toRoman 5
+    label "expected" expected
+    label "actual" actual
+    ensureEqual expected actual
+
+romanNumerals.test.ex6 = verify do
+  labeled "6 is VI" do
+    expected = "VI"
+    actual = toRoman 6
+    label "expected" expected
+    label "actual" actual
+    ensureEqual expected actual
+
+romanNumerals.test.ex7 = verify do
+  labeled "9 is IX" do
+    expected = "IX"
+    actual = toRoman 9
+    label "expected" expected
+    label "actual" actual
+    ensureEqual expected actual
+
+romanNumerals.test.ex8 = verify do
+  labeled "27 is XXVII" do
+    expected = "XXVII"
+    actual = toRoman 27
+    label "expected" expected
+    label "actual" actual
+    ensureEqual expected actual
+
+romanNumerals.test.ex9 = verify do
+  labeled "48 is XLVIII" do
+    expected = "XLVIII"
+    actual = toRoman 48
+    label "expected" expected
+    label "actual" actual
+    ensureEqual expected actual
+
+romanNumerals.test.ex10 = verify do
+  labeled "49 is XLIX" do
+    expected = "XLIX"
+    actual = toRoman 49
+    label "expected" expected
+    label "actual" actual
+    ensureEqual expected actual
+
+romanNumerals.test.ex11 = verify do
+  labeled "59 is LIX" do
+    expected = "LIX"
+    actual = toRoman 59
+    label "expected" expected
+    label "actual" actual
+    ensureEqual expected actual
+
+romanNumerals.test.ex12 = verify do
+  labeled "93 is XCIII" do
+    expected = "XCIII"
+    actual = toRoman 93
+    label "expected" expected
+    label "actual" actual
+    ensureEqual expected actual
+
+romanNumerals.test.ex13 = verify do
+  labeled "141 is CXLI" do
+    expected = "CXLI"
+    actual = toRoman 141
+    label "expected" expected
+    label "actual" actual
+    ensureEqual expected actual
+
+romanNumerals.test.ex14 = verify do
+  labeled "163 is CLXIII" do
+    expected = "CLXIII"
+    actual = toRoman 163
+    label "expected" expected
+    label "actual" actual
+    ensureEqual expected actual
+
+romanNumerals.test.ex15 = verify do
+  labeled "402 is CDII" do
+    expected = "CDII"
+    actual = toRoman 402
+    label "expected" expected
+    label "actual" actual
+    ensureEqual expected actual
+
+romanNumerals.test.ex16 = verify do
+  labeled "575 is DLXXV" do
+    expected = "DLXXV"
+    actual = toRoman 575
+    label "expected" expected
+    label "actual" actual
+    ensureEqual expected actual
+
+romanNumerals.test.ex17 = verify do
+  labeled "911 is CMXI" do
+    expected = "CMXI"
+    actual = toRoman 911
+    label "expected" expected
+    label "actual" actual
+    ensureEqual expected actual
+
+romanNumerals.test.ex18 = verify do
+  labeled "1024 is MXXIV" do
+    expected = "MXXIV"
+    actual = toRoman 1024
+    label "expected" expected
+    label "actual" actual
+    ensureEqual expected actual
+
+romanNumerals.test.ex19 = verify do
+  labeled "3000 is MMM" do
+    expected = "MMM"
+    actual = toRoman 3000
+    label "expected" expected
+    label "actual" actual
+    ensureEqual expected actual
+
+romanNumerals.test.ex20 = verify do
+  labeled "16 is XVI" do
+    expected = "XVI"
+    actual = toRoman 16
+    label "expected" expected
+    label "actual" actual
+    ensureEqual expected actual
+
+romanNumerals.test.ex21 = verify do
+  labeled "66 is LXVI" do
+    expected = "LXVI"
+    actual = toRoman 66
+    label "expected" expected
+    label "actual" actual
+    ensureEqual expected actual
+
+romanNumerals.test.ex22 = verify do
+  labeled "166 is CLXVI" do
+    expected = "CLXVI"
+    actual = toRoman 166
+    label "expected" expected
+    label "actual" actual
+    ensureEqual expected actual
+
+romanNumerals.test.ex23 = verify do
+  labeled "666 is DCLXVI" do
+    expected = "DCLXVI"
+    actual = toRoman 666
+    label "expected" expected
+    label "actual" actual
+    ensureEqual expected actual
+
+romanNumerals.test.ex24 = verify do
+  labeled "1666 is MDCLXVI" do
+    expected = "MDCLXVI"
+    actual = toRoman 1666
+    label "expected" expected
+    label "actual" actual
+    ensureEqual expected actual
+
+romanNumerals.test.ex25 = verify do
+  labeled "3001 is MMMI" do
+    expected = "MMMI"
+    actual = toRoman 3001
+    label "expected" expected
+    label "actual" actual
+    ensureEqual expected actual
+
+romanNumerals.test.ex26 = verify do
+  labeled "3999 is MMMCMXCIX" do
+    expected = "MMMCMXCIX"
+    actual = toRoman 3999
+    label "expected" expected
+    label "actual" actual
+    ensureEqual expected actual
+
+romanNumerals.test.ex27 = verify do
+  labeled "3888 is MMMDCCCLXXXVIII" do
+    expected = "MMMDCCCLXXXVIII"
+    actual = toRoman 3888
+    label "expected" expected
+    label "actual" actual
+    ensureEqual expected actual
+
+test> romanNumerals.tests = join [
+  romanNumerals.test.ex1,
+  romanNumerals.test.ex2,
+  romanNumerals.test.ex3,
+  romanNumerals.test.ex4,
+  romanNumerals.test.ex5,
+  romanNumerals.test.ex6,
+  romanNumerals.test.ex7,
+  romanNumerals.test.ex8,
+  romanNumerals.test.ex9,
+  romanNumerals.test.ex10,
+  romanNumerals.test.ex11,
+  romanNumerals.test.ex12,
+  romanNumerals.test.ex13,
+  romanNumerals.test.ex14,
+  romanNumerals.test.ex15,
+  romanNumerals.test.ex16,
+  romanNumerals.test.ex17,
+  romanNumerals.test.ex18,
+  romanNumerals.test.ex19,
+  romanNumerals.test.ex20,
+  romanNumerals.test.ex21,
+  romanNumerals.test.ex22,
+  romanNumerals.test.ex23,
+  romanNumerals.test.ex24,
+  romanNumerals.test.ex25,
+  romanNumerals.test.ex26,
+  romanNumerals.test.ex27
+]
