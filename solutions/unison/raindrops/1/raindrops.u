@@ -1,0 +1,12 @@
+raindrops.convert : Nat -> Text
+raindrops.convert n = 
+  match n with
+    x
+      | (Nat.mod x 3 == 0) && (Nat.mod x 5 == 0) && (Nat.mod x 7 == 0) -> "PlingPlangPlong"
+      | (Nat.mod x 3 == 0) && (Nat.mod x 5 == 0) -> "PlingPlang"
+      | (Nat.mod x 3 == 0) && (Nat.mod x 7 == 0) -> "PlingPlong"
+      | (Nat.mod x 5 == 0) && (Nat.mod x 7 == 0) -> "PlangPlong"
+      | Nat.mod x 3 == 0 -> "Pling"
+      | Nat.mod x 5 == 0 -> "Plang"
+      | Nat.mod x 7 == 0 -> "Plong"
+    _ -> Nat.toText n

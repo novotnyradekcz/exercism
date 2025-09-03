@@ -1,0 +1,10 @@
+collatzConjecture.steps : Nat -> Optional Nat
+collatzConjecture.steps n = 
+  recursiveCollatz : Nat -> Nat -> Optional Nat
+  recursiveCollatz steps num = 
+    match num with
+      0 -> None
+      1 -> Some steps
+      x | mod x 2 == 0 -> recursiveCollatz (steps + 1) (num / 2)
+      _ -> recursiveCollatz (steps + 1) (3 * num + 1)
+  recursiveCollatz 0 n

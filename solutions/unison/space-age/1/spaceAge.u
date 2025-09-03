@@ -1,0 +1,14 @@
+spaceAge.age : Text -> Nat -> Optional Float
+spaceAge.age planet earthAgeSeconds =
+  earthAgeYears : Float
+  earthAgeYears = (Nat.toFloat earthAgeSeconds) Float./ (Nat.toFloat 31557600)
+  match planet with
+    "Mercury" -> earthAgeYears Float./ 0.2408467 |> Some
+    "Venus" -> earthAgeYears Float./ 0.61519726 |> Some
+    "Earth" -> earthAgeYears |> Some
+    "Mars" -> earthAgeYears Float./ 1.8808158 |> Some
+    "Jupiter" -> earthAgeYears Float./ 11.862615 |> Some
+    "Saturn" -> earthAgeYears Float./ 29.447498 |> Some
+    "Uranus" -> earthAgeYears Float./ 84.016846 |> Some
+    "Neptune" -> earthAgeYears Float./ 164.79132 |> Some
+    _ -> None

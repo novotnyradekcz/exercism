@@ -1,0 +1,7 @@
+acronym.abbreviate : Text -> Text
+acronym.abbreviate test = 
+  test
+    |> toCharList
+    |> split (c -> not ((isLetter c) || (c == ?\')))
+    |> mapOptional (t -> List.head t |> filter isLetter |> map toUpper)
+    |> fromCharList

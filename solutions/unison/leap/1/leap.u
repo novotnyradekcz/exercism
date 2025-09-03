@@ -1,0 +1,8 @@
+leap.leap : Nat -> Boolean
+leap.leap year =
+  match year with
+    y
+      | Nat.mod y 400 == 0 -> true
+      | Nat.mod y 100 == 0 -> false
+      | Nat.mod y 4 == 0 -> true
+    _ -> false
