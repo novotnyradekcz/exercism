@@ -1,0 +1,94 @@
+(spaceAge.+-) : Optional Float -> Optional Float -> Boolean
+answer spaceAge.+- expected =
+  sameOptStatus = (isSome answer && isSome expected) || (isNone answer && isNone expected )
+  isWithinAllowance = Optional.zip answer expected |> Optional.map (uncurry testAllowance) |> Optional.getOrElse true
+  testAllowance exp ans =
+    epsilon = 0.01
+    upper = exp + epsilon
+    lower = exp - epsilon
+    (ans > lower) && (ans < upper)
+  sameOptStatus && isWithinAllowance
+
+spaceAge.test.ex1 = verify do
+  labeled "age on Earth" do
+    expected = Some 31.69
+    actual = age "Earth" 1000000000
+    label "expected" expected
+    label "actual" actual
+    ensure (actual +- expected)
+
+spaceAge.test.ex2 = verify do
+  labeled "age on Mercury" do
+    expected = Some 280.88
+    actual = age "Mercury" 2134835688
+    label "expected" expected
+    label "actual" actual
+    ensure (actual +- expected)
+
+spaceAge.test.ex3 = verify do
+  labeled "age on Venus" do
+    expected = Some 9.78
+    actual = age "Venus" 189839836
+    label "expected" expected
+    label "actual" actual
+    ensure (actual +- expected)
+
+spaceAge.test.ex4 = verify do
+  labeled "age on Mars" do
+    expected = Some 35.88
+    actual = age "Mars" 2129871239
+    label "expected" expected
+    label "actual" actual
+    ensure (actual +- expected)
+
+spaceAge.test.ex5 = verify do
+  labeled "age on Jupiter" do
+    expected = Some 2.41
+    actual = age "Jupiter" 901876382
+    label "expected" expected
+    label "actual" actual
+    ensure (actual +- expected)
+
+spaceAge.test.ex6 = verify do
+  labeled "age on Saturn" do
+    expected = Some 2.15
+    actual = age "Saturn" 2000000000
+    label "expected" expected
+    label "actual" actual
+    ensure (actual +- expected)
+
+spaceAge.test.ex7 = verify do
+  labeled "age on Uranus" do
+    expected = Some 0.46
+    actual = age "Uranus" 1210123456
+    label "expected" expected
+    label "actual" actual
+    ensure (actual +- expected)
+
+spaceAge.test.ex8 = verify do
+  labeled "age on Neptune" do
+    expected = Some 0.35
+    actual = age "Neptune" 1821023456
+    label "expected" expected
+    label "actual" actual
+    ensure (actual +- expected)
+
+spaceAge.test.ex9 = verify do
+  labeled "invalid planet causes error" do
+    expected = None
+    actual = age "Sun" 680804807
+    label "expected" expected
+    label "actual" actual
+    ensure (actual +- expected)
+
+test> spaceAge.tests = join [
+  spaceAge.test.ex1,
+  spaceAge.test.ex2,
+  spaceAge.test.ex3,
+  spaceAge.test.ex4,
+  spaceAge.test.ex5,
+  spaceAge.test.ex6,
+  spaceAge.test.ex7,
+  spaceAge.test.ex8,
+  spaceAge.test.ex9
+]
