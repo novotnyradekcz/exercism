@@ -1,0 +1,10 @@
+armstrongNumbers.isArmstrongNumber : Nat -> Boolean
+armstrongNumbers.isArmstrongNumber number =
+  digits = getDigits number
+  size = List.size digits
+  sum = digits |> List.foldLeft (acc -> a -> acc + Nat.pow a size) 0
+  sum == number
+getDigits : Nat -> [Nat]
+getDigits = cases
+  n | n <= 9 -> [n]
+  n -> getDigits (n / 10) :+ (Nat.mod n 10) 
